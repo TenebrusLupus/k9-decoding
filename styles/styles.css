@@ -1,0 +1,292 @@
+/*.title {
+    color: deeppink;
+}*/
+/*<uniquifier>: Use a unique and descriptive class name
+<weight>: Use a value from 100 to 900*/
+.geologica-<uniquifier> {
+  font-family: "Geologica", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0,
+    "SHRP" 0;
+}
+.architects-daughter-regular {
+  font-family: "Architects Daughter", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Geologica, Helvtica, Arial, sans-serif;
+    font-size: 100%;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 1em auto;
+    padding: .25em;
+    display: grid;
+    grid-template: repeat(4, auto) / 1fr;
+    grid-gap: 1%;
+    grid-template-areas: 
+        "head"
+        "navi"
+        "main"
+        "foot";      
+}
+h1, h2, h3 {margin-bottom: .25em;}
+header {
+    padding-bottom: .5em;
+    border-bottom: 3px solid black;
+    grid-area: head;
+}
+header h3 {font-size: 150%;}
+header #logo {
+    float: left;
+    padding: .5em;
+    width: 100%;
+    max-width: 80px;
+    min-width: 50px;
+}
+header .slogan {font-family: "Architects Daughter", Helvtica, Arial, sans-serif;}
+header h2 {
+    font-size: 250%;
+    text-shadow: 2px 2px 4px #E91E63;
+}
+nav {
+    margin-left: .5em;
+    grid-area: navi;    
+}
+#nav_menu ul {
+	list-style: none;
+	/*position: relative;*/
+    display: grid;
+    grid-template: auto / repeat(4, 1fr);   
+}
+#nav_menu ul li {
+    position: relative;
+    padding-right: .5em;
+}
+#nav_menu ul ul {
+	display: none;         
+	position: absolute;
+	top: 100%;  
+    width: 110%;
+}
+#nav_menu ul li:hover > ul {
+	display: block;        
+}
+#nav_menu > ul::after {
+	content: "";
+	display: block;
+}
+#nav_menu ul {
+	margin: 0;
+	padding: 0;
+}
+#nav_menu ul li a {
+	text-align: right;
+	display: block;
+	padding: .5em;
+	text-decoration: none;
+	background: white;
+    opacity: 1;
+	color: black;
+	font-weight: bold;
+}
+#nav_menu ul li a.current {
+	color: #E91E63;
+}
+#nav_menu ul li a:hover, #nav_menu ul li a:focus {
+	color: gray;
+}
+main {
+    grid-area: main;
+    display: grid;
+    grid-template: repeat(3, auto) / repeat(2, 50%);
+    grid-gap: .25em;
+    grid-template-areas: 
+        "s0 s0"
+        "s1 s2"
+        "s3 s4";
+}
+#intro {
+    grid-area: s0;
+    font-family: "Architects Daughter", Helvtica, Arial, sans-serif;
+    justify-content: center;
+    text-align: center;
+    font-size: 120%;
+    color: black;
+    height: auto;
+    width: 100%;
+    /*background: rgba(79, 195, 247, 30%);*/
+}
+#intro img{
+    width: 100%;
+    
+}
+main img {
+    max-width: 100%;
+    min-width: 50%;
+}
+#behaviour {
+    grid-area: s1;
+    text-align: center;
+    padding: 1em;
+    background-image: -webkit-linear-gradient(right, #E91E63 0%, #FCE4EC  100%);
+    background-image: -o-linear-gradient(right, #E91E63 0%, #FCE4EC  100%);
+}
+#training {
+    grid-area: s2;
+    text-align: center;
+    padding: 1em;
+    background-image: -webkit-linear-gradient(right, #FCE4EC 0%, #E91E63 100%);
+    background-image: -o-linear-gradient(right, #FCE4EC 0%, #E91E63 100%);
+}
+main h1 {font-size: 200%;    }
+main a {
+    text-decoration: none;
+    color: black;
+}
+#testimonials {
+    grid-area: s3;
+    text-align: center;
+    padding: 1em;
+    background-image: -webkit-linear-gradient(right, #29B6F6 0%, white);
+    background-image: -o-linear-gradient(right, #29B6F6 0%, white);
+}
+#calendar {
+    grid-area: s4;
+    text-align: center;
+    padding: 1em;
+    background-image: -webkit-linear-gradient(right, white 0%, #29B6F6);
+    background-image: -o-linear-gradient(right, white 0%, #29B6F6);
+}
+main h3 {font-size: 150%;}
+main p {padding: .25em 0;}
+#mobile_menu {display: none;}
+footer {
+    grid-area: foot;
+    background: rgba(77, 208, 225);
+    display: grid;
+    grid-template: repeat(3 1fr)/ repeat(3 1fr);
+    grid-template-areas: 
+        "feet1 feet2 whatsapp"
+        "feet1 feet2 email"
+        "feet1 feet2 facebook";
+}
+#footer_nav {
+    grid-area: feet1;
+}
+#footer_nav ul li a {
+    font-size: 85%;
+	display: block;
+	padding: .25em;
+	text-decoration: none;
+	color: black;
+}
+#footer_nav ul li a.current {
+	color: #E91E63;
+}
+#footer_nav ul li a:hover, #nav_menu ul li a:focus {
+	color: gray;
+}
+footer #rtt {
+    position: fixed;
+    right: 0;
+    top: 90%;
+    grid-area: feet3;
+}
+footer #whatsapp {
+    grid-area: whatsapp;
+    justify-self: right;
+    padding-right: 5em;
+}
+footer #email {
+    grid-area: email;
+    justify-self: right;
+    padding-right: 5em;
+}
+footer #facebook {
+    grid-area: facebook;
+    justify-self: right;
+    padding-right: 5em;
+}
+/*#footer_nav {
+    margin-left: .5em;
+    grid-area: feet3;
+}
+#footer_nav ul {
+    display: block;
+	list-style: none;  
+    margin: 0;
+	padding: 0;
+}
+#footer_nav ul li {
+    width: 7em;
+}
+#footer_nav ul li a {
+	display: block;
+	padding: .2em 0;
+	text-decoration: none;
+	color: black;
+}
+#footer_nav ul li a.current {
+	color: #E91E63;
+}
+#footer_nav ul li a:hover, #nav_menu ul li a:focus {
+	color: gray;
+}*/
+/*tablet portrait to standard 960*/
+/*@media only screen and (max-width: 959px) {
+    #nav_menu ul lu a {font-size: 95%}
+    main h1 {font-size: 150%;}
+    }*/
+@media only screen and (max-width: 767px) {
+    body {
+    grid-template: repeat(4, auto) / 1fr;
+    grid-gap: 0%;
+    grid-template-areas: 
+        "head"
+        "navi"
+        "main"
+        "foot";
+    }
+    header {
+        grid-area: head;
+        text-align: center;
+    }
+    header h2 {font-size: 200%;}
+    header h3 {font-size: 135%;}
+    header #logo {width: 80%;}
+    #nav_menu {display: none;}
+    #mobile_menu {
+        display: block;
+        grid-area: navi;
+    }
+    main {
+        grid-area: main;
+        grid-template: repeat(5, auto) / 1fr;
+        grid-gap: 0%;
+        grid-template-areas: 
+            "intro"
+            "behaviour"
+            "training"
+            "testimonials"
+            "calendar"
+    }
+    #intro {grid-area: intro;}
+    #behaviour {grid-area: behaviour;}
+    #training {grid-area: training;}
+    #testimonials {grid-area: testimonials;}
+    #calendar{grid-area: calendar;}
+    main h1, h3 {font-size: 140%;}
+    #testi {width: 70%;}
+} 
+
+
