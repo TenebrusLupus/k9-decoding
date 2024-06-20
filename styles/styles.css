@@ -45,7 +45,10 @@ header {
     border-bottom: 3px solid black;
     grid-area: head;
 }
-header h3 {font-size: 150%;}
+header h3 {
+    font-size: 150%;
+    text-shadow: 2px 2px 4px #E91E63;
+}
 header #logo {
     float: left;
     padding: .5em;
@@ -56,7 +59,7 @@ header #logo {
 header .slogan {font-family: "Architects Daughter", Helvtica, Arial, sans-serif;}
 header h2 {
     font-size: 250%;
-    text-shadow: 2px 2px 4px #E91E63;
+    text-shadow: 2px 2px 4px #083af4;
 }
 nav {
     margin-left: .5em;
@@ -64,19 +67,19 @@ nav {
 }
 #nav_menu ul {
 	list-style: none;
-	/*position: relative;*/
     display: grid;
-    grid-template: auto / repeat(4, 1fr);   
+    grid-template: auto / repeat(5, 1fr);   
 }
 #nav_menu ul li {
     position: relative;
     padding-right: .5em;
+    /*border: dashed;*/
 }
 #nav_menu ul ul {
 	display: none;         
 	position: absolute;
 	top: 100%;  
-    width: 110%;
+    width: 100%;
 }
 #nav_menu ul li:hover > ul {
 	display: block;        
@@ -98,9 +101,10 @@ nav {
     opacity: 1;
 	color: black;
 	font-weight: bold;
+    width: 95%;
 }
 #nav_menu ul li a.current {
-	color: #E91E63;
+	color: #fb6eb0;
 }
 #nav_menu ul li a:hover, #nav_menu ul li a:focus {
 	color: gray;
@@ -123,13 +127,21 @@ main {
     font-size: 120%;
     color: black;
     height: auto;
-    width: 100%;
+    width: 95%;
+    position: relative;
     /*background: rgba(79, 195, 247, 30%);*/
+}
+/*.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 145%;
+    color: black;
 }
 #intro img{
     width: 100%;
-    
-}
+}*/
 main img {
     max-width: 100%;
     min-width: 50%;
@@ -138,15 +150,15 @@ main img {
     grid-area: s1;
     text-align: center;
     padding: 1em;
-    background-image: -webkit-linear-gradient(right, #E91E63 0%, #FCE4EC  100%);
-    background-image: -o-linear-gradient(right, #E91E63 0%, #FCE4EC  100%);
+    background-image: -webkit-linear-gradient(right, #FCE4EC 0%, #fb6eb0 100%);
+    background-image: -o-linear-gradient(right, #FCE4EC 0%, #fb6eb0 100%);
 }
 #training {
     grid-area: s2;
     text-align: center;
     padding: 1em;
-    background-image: -webkit-linear-gradient(right, #FCE4EC 0%, #E91E63 100%);
-    background-image: -o-linear-gradient(right, #FCE4EC 0%, #E91E63 100%);
+    background-image: -webkit-linear-gradient(right, #fb6eb0 0%, #FCE4EC 100%);
+    background-image: -o-linear-gradient(right, #FCE4EC 0%, #FCE4EC 100%);
 }
 main h1 {font-size: 200%;    }
 main a {
@@ -160,13 +172,24 @@ main a {
     background-image: -webkit-linear-gradient(right, #29B6F6 0%, white);
     background-image: -o-linear-gradient(right, #29B6F6 0%, white);
 }
-#calendar {
+#charities {
     grid-area: s4;
     text-align: center;
     padding: 1em;
     background-image: -webkit-linear-gradient(right, white 0%, #29B6F6);
     background-image: -o-linear-gradient(right, white 0%, #29B6F6);
 }
+#charities ul {
+    padding: .25em;
+    font-size: 130%;
+}
+#charities ul li {
+    padding: .2em;
+    list-style: none;
+}
+/*#charities ul li a {
+    text-decoration: none;
+}*/
 main h3 {font-size: 150%;}
 main p {padding: .25em 0;}
 #mobile_menu {display: none;}
@@ -176,17 +199,25 @@ footer {
     display: grid;
     grid-template: repeat(3 1fr)/ repeat(3 1fr);
     grid-template-areas: 
-        "feet1 feet2 whatsapp"
-        "feet1 feet2 email"
-        "feet1 feet2 facebook";
+        "feet feet whatsapp"
+        "feet feet email"
+        "feet feet facebook";
 }
 #footer_nav {
-    grid-area: feet1;
+    grid-area: feet;
+}
+#footer_nav ul {
+    display: grid;
+    grid-template: auto / repeat(5, 1fr); 
+}
+#footer_nav ul li {
+    position: relative;
+    list-style: none;
+    text-align: center;
 }
 #footer_nav ul li a {
-    font-size: 85%;
-	display: block;
-	padding: .25em;
+    font-size: 85%;   
+	padding: .5em;
 	text-decoration: none;
 	color: black;
 }
@@ -199,7 +230,7 @@ footer {
 footer #rtt {
     position: fixed;
     right: 0;
-    top: 90%;
+    top: 95%;
     grid-area: feet3;
 }
 footer #whatsapp {
@@ -278,13 +309,13 @@ footer #facebook {
             "behaviour"
             "training"
             "testimonials"
-            "calendar"
+            "charities"
     }
     #intro {grid-area: intro;}
     #behaviour {grid-area: behaviour;}
     #training {grid-area: training;}
     #testimonials {grid-area: testimonials;}
-    #calendar{grid-area: calendar;}
+    #charities{grid-area: charities;}
     main h1, h3 {font-size: 140%;}
     #testi {width: 70%;}
 } 
